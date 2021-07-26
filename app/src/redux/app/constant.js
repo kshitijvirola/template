@@ -1,0 +1,4 @@
+export const LOADER_STATUS = "LOADER_STATUS";
+export const ERROR_HANDLER = "ERROR_HANDLER";
+export const ERROR_EMPTY = "ERROR_EMPTY";
+export const REDIRECT_LOGIN = "REDIRECT_LOGIN";

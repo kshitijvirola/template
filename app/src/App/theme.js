@@ -1,6 +1,6 @@
 const Theme = {
-  mainColor: "#141B5A",
+  mainColor: "#F89C32",
   baseColor: "#B2B2B2",
- };
+};
 
 export { Theme };

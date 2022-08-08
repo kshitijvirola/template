@@ -1,11 +1,10 @@
 import * as actions from "./constant";
 const initialState = {
   error: false,
-  isAuthenticated: false,
   loading: false,
-  redirectProfile: false,
   message: false,
-  userId:0
+  isAuthenticated: false,
+  userId: 0,
 };
 
 export default (state = initialState, action) => {
@@ -38,7 +37,7 @@ export default (state = initialState, action) => {
         ...state,
         isAuthenticated: true,
         userId: action.payload,
-      };   
+      };
     case actions.LOGOUT_INITIATED:
       return {
         ...state,
@@ -50,10 +49,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         error: false,
-        isAuthenticated: false,
-        session_id: null,
         loading: false,
-        redirectProfile: false,
         message: false,
       };
     case actions.LOGOUT_ERROR:
@@ -61,8 +57,22 @@ export default (state = initialState, action) => {
         ...state,
         error: true,
         loading: false,
-        redirectProfile: false,
         message: false,
+      };
+    case actions.CHECK_SESSION_INITIATED:
+      return {
+        ...state,
+        error: false,
+      };
+    case actions.CHECK_SESSION_SUCCESS:
+      return {
+        ...state,
+        error: false,
+      };
+    case actions.CHECK_SESSION_ERROR:
+      return {
+        ...state,
+        error: true,
       };
     default:
       return state;

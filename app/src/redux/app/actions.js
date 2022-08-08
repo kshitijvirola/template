@@ -4,16 +4,14 @@ import { push } from "connected-react-router";
 export const errorHandler = (payload) => (dispatch) => {
   try {
     let message = "";
-    if (payload.ResponseStatus === "Unauthorized") {
-      message = payload.Message;
-      localStorage.clear();
-    } else message = payload.Message ? payload.Message : "";
+    // if (payload.ResponseStatus && payload.ResponseStatus === "Unauthorized") {message = payload.message;localStorage.clear();} else
+    message = payload && payload.message ? payload.message : "Network error";
     dispatch({
       type: actions.ERROR_HANDLER,
       payload: message,
     });
   } catch (error) {
-    console.log(error, "Error Handler");
+    console.log(error);
   }
 };
 export const errorEmpty = () => (dispatch) => {

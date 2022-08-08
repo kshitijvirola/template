@@ -1,3 +1,11 @@
+export const getAuthUserID = () => {
+  if (localStorage.auth) {
+    let auth = JSON.parse(localStorage.auth);
+    if (auth && auth.prj === "kd" && auth.userId) return auth.userId;
+    return false;
+  }
+  return false;
+};
 export const getAuthToken = () => {
   if (localStorage.auth) {
     let auth = JSON.parse(localStorage.auth);
@@ -6,7 +14,6 @@ export const getAuthToken = () => {
   }
   return false;
 };
-
 export const getAuthUserName = () => {
   if (localStorage.auth) {
     let auth = JSON.parse(localStorage.auth);
@@ -15,10 +22,10 @@ export const getAuthUserName = () => {
   }
   return false;
 };
-export const getAuthUserID = () => {
+export const getAuthRole = () => {
   if (localStorage.auth) {
     let auth = JSON.parse(localStorage.auth);
-    if (auth && auth.userId) return auth.userId;
+    if (auth && auth.prj === "kd" && auth.role) return auth.role;
     return false;
   }
   return false;

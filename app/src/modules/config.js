@@ -1,4 +1,4 @@
-export const configVar = { BASE_URL:process.env.REACT_APP_BASE_URL }; // "https://porterapi.naapbooks.com/" }; // 
+export const configVar = { BASE_URL:process.env.REACT_APP_BASE_URL };
 
 export const apiConstant = {
   AUTH_LOGIN: "api/Account/Login",
